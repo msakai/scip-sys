@@ -19,8 +19,7 @@ jobs:
       - name: Test bundled
         run: |
           brew list | grep gcc
-          ls -l /opt/homebrew/opt/gcc/lib/gcc/15/libgfortran.5.dylib
-          file /opt/homebrew/opt/gcc/lib/gcc/15/libgfortran.5.dylib
+          brew list --verbose gcc@15 | grep libgfortran
           # ls -l /opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib
           # file /opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib
           cargo b --features bundled --release
