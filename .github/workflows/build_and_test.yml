@@ -19,8 +19,10 @@ jobs:
       - name: Test bundled
         run: |
           brew list | grep gcc
-          ls -l /opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib
-          file /opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib
+          ls -l /opt/homebrew/opt/gcc/lib/gcc/15/libgfortran.5.dylib
+          file /opt/homebrew/opt/gcc/lib/gcc/15/libgfortran.5.dylib
+          # ls -l /opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib
+          # file /opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib
           cargo b --features bundled --release
           cargo t --features bundled --release create
           cargo t --features bundled --release --examples
