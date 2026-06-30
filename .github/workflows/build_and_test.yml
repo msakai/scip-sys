@@ -20,7 +20,8 @@ jobs:
         run: |
           brew list | grep gcc
           brew list --verbose gcc@15 | grep libgfortran
-          # ls -l /opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib
+          brew install gcc
+          ls -l /opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib
           # file /opt/homebrew/opt/gcc/lib/gcc/current/libgfortran.5.dylib
           cargo b --features bundled --release
           cargo t --features bundled --release create
